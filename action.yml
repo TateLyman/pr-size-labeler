@@ -1,0 +1,32 @@
+name: "PR Size Labeler"
+description: "Automatically label PRs by size — XS, S, M, L, XL"
+author: "tatelyman"
+
+branding:
+  icon: "tag"
+  color: "blue"
+
+inputs:
+  xs_max:
+    description: "Maximum number of changes for XS label"
+    required: false
+    default: "10"
+  s_max:
+    description: "Maximum number of changes for S label"
+    required: false
+    default: "50"
+  m_max:
+    description: "Maximum number of changes for M label"
+    required: false
+    default: "200"
+  l_max:
+    description: "Maximum number of changes for L label"
+    required: false
+    default: "500"
+  github_token:
+    description: "GitHub token for API access"
+    required: true
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
